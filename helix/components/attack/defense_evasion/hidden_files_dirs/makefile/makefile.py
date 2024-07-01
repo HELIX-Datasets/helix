@@ -7,7 +7,7 @@ class AttackLinuxCreateHiddenFileComponent(component.Component):
 
     name = "linux-create-hidden-file"
     verbose_name = "Linux Create Hidden File"
-    description = "Linux File Deletion via remove"
+    description = "Linux Create Hidden File"
     version = "1.0.0"
     type = "att&ck"
     date = "2024-07-01 :15:30.000000"
