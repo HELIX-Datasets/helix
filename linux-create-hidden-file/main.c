@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 
-int ${new_file}(int argv, char* argc[]){
+int new_file_6be1752fc988415790066473ca7377fa(int argv, char* argc[]){
 
     FILE *fpoint;
 
     char fileData[50]= "Hello, this is a warning";
 
-    // filePath = ${path};
+    // filePath = "/home/gl33203/Downloads/trial1.txt";
 
-    fpoint = fopen(${path},"w");
+    fpoint = fopen("/home/gl33203/Downloads/trial1.txt","w");
 
     if (fpoint == NULL){
         printf("File failed to open.\n");
@@ -25,6 +25,13 @@ int ${new_file}(int argv, char* argc[]){
         fclose(fpoint);
         printf("Data succesfully written in file.\n");
     }
+
+    return 0;
+}
+
+
+int main(int argc, char **argv) {
+    new_file_6be1752fc988415790066473ca7377fa(argc, argv);
 
     return 0;
 }

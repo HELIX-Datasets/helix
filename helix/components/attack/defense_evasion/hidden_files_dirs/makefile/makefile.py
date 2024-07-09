@@ -1,8 +1,9 @@
-from helix import component
-from helix import utils
+# from helix import component
+# from helix import utils
+from .... import utils
 
 
-class AttackLinuxCreateHiddenFileComponent(component.Component):
+class AttackLinuxCreateHiddenFileComponent(utils.SimpleTemplatedComponent):
     """Create Hidden File in Linux."""
 
     name = "linux-create-hidden-file"
@@ -19,15 +20,17 @@ class AttackLinuxCreateHiddenFileComponent(component.Component):
         ("name", "linux-create"),
     )
 
-    blueprints = ["cmake-c"]
+    # blueprints = ["cmake-c"]
+    options = {"path":{}}
 
 
-    #options = {"path": {}}
 
+    # def generate(self):
+    #     source = utils.source(__name__, "linux-create.c")
 
-    def generate(self):
-        source = utils.source(__name__, "linux-create.c")
+    #     self.functions = [source]
+    #     self.calls = {"main": ["${path}(argv, argc);"]}
+    #     self.globals = ["path"]
 
-        self.functions = [source]
-        self.calls = {"main": ["${new_file}();"]}
-        self.globals = ["new_file"]
+    source = "linux-create.c"
+    function = "new_file"
