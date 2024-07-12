@@ -7,7 +7,6 @@ int ${new_file}(int argv, char* argc[]){
 
     char fileData[50]= "Hello, this is a warning";
 
-    // filePath = ${path};
 
     fpoint = fopen(${path},"w");
 

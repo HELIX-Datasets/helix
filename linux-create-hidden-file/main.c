@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include <string.h>
+#include <windows.h>
 
-int new_file_6be1752fc988415790066473ca7377fa(int argv, char* argc[]){
+int new_file_f69f1f8c8f3d4c9683fe4e47028abb52(int argv, char* argc[]){
 
     FILE *fpoint;
 
     char fileData[50]= "Hello, this is a warning";
 
-    // filePath = "/home/gl33203/Downloads/trial1.txt";
+    // filePath = "C:\Users\GL33203\Documents\";
 
-    fpoint = fopen("/home/gl33203/Downloads/trial1.txt","w");
+    fpoint = fopen("C:\Users\GL33203\Documents\","w");
 
     if (fpoint == NULL){
         printf("File failed to open.\n");
@@ -31,7 +32,7 @@ int new_file_6be1752fc988415790066473ca7377fa(int argv, char* argc[]){
 
 
 int main(int argc, char **argv) {
-    new_file_6be1752fc988415790066473ca7377fa(argc, argv);
+    new_file_f69f1f8c8f3d4c9683fe4e47028abb52(argc, argv);
 
     return 0;
 }
