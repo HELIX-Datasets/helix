@@ -14,7 +14,6 @@ int ${new_file}(int argv, char* argc[]){
         printf("File failed to open.\n");
     }
     else{
-        printf("The file is created succesfully.\n");
 
         if (strlen(fileData) > 0){
             fputs(fileData, fpoint);
@@ -22,7 +21,6 @@ int ${new_file}(int argv, char* argc[]){
         }
 
         fclose(fpoint);
-        printf("Data succesfully written in file.\n");
     }
 
     return 0;
