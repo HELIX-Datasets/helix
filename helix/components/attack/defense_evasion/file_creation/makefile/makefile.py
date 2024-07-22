@@ -20,5 +20,5 @@ class AttackLinuxCreateHiddenFileComponent(utils.SimpleTemplatedComponent):
 
     options = {"path":{}}
 
-    source = "linux-create.c"
+    source = "linux-create.cpp"
     function = "new_file"
