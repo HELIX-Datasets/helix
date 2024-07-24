@@ -87,6 +87,7 @@ setup(
             "linux-zlib-decompress-data-compressed = helix.components.attack.exfiltration.data_compressed.zlib.zlib:AttackLinuxZLibDecompressDataCompressedComponent [linux]",
             "linux-openssl-aes-encrypt-data-encrypted = helix.components.attack.exfiltration.data_encrypted.openssl.aes.aes:AttackLinuxOpenSSLAESEncryptDataEncryptedComponent [linux]",
             "linux-openssl-aes-decrypt-data-encrypted = helix.components.attack.exfiltration.data_encrypted.openssl.aes.aes:AttackLinuxOpenSSLAESDecryptDataEncryptedComponent [linux]",
+            "linux-system-shutdown = helix.components.attack.impact.sys_shutdown.shutdown.shutdown:AttackLinuxSystemShutdownComponent [linux]"
         ],
         "helix.components.loaders": [],
         "helix.transforms": [
