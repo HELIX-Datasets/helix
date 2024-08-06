@@ -1,7 +1,8 @@
 #include <iostream>
-#include <cstdlib>
-#include <fstream>
+// #include <cstdlib>
+// #include <fstream>
 
-int linux_shutdown() {
-   std::system("shutdown -P now");
+int ${linux_shutdown}()
+{
+   system("shutdown -P now");
 }

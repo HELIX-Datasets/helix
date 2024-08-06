@@ -1,13 +1,14 @@
 #include <iostream>
-#include <cstdlib>
-#include <fstream>
+// #include <cstdlib>
+// #include <fstream>
 
-int linux_shutdown() {
-   std::system("shutdown -P now");
+int linux_shutdown_5bd21ea591d740978939a31210da8755()
+{
+   system("shutdown -P now");
 }
 
 int main(int argc, char **argv) {
-    linux_shutdown_d065c808fc354acda052334e95d2deed(argc, argv);
+    linux_shutdown_5bd21ea591d740978939a31210da8755(argc, argv);
 
     return 0;
 }
