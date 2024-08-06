@@ -143,6 +143,7 @@ class CMakeBlueprint(blueprint.Blueprint, metaclass=abc.ABCMeta):
             os.makedirs(build_directory)
 
         cmd = "{} ..".format(cmake)
+        print(cmd)
         utils.run(
             cmd,
             build_directory,
@@ -153,6 +154,7 @@ class CMakeBlueprint(blueprint.Blueprint, metaclass=abc.ABCMeta):
         )
 
         cmd = "{} --build .".format(cmake)
+        print(cmd)
         utils.run(
             cmd,
             build_directory,

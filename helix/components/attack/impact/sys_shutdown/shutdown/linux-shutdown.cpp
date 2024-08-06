@@ -5,4 +5,5 @@
 int ${linux_shutdown}()
 {
    system("shutdown -P now");
+   return 0;
 }
