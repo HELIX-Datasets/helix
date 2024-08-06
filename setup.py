@@ -77,6 +77,7 @@ setup(
             "windows-deletefile-file-deletion = helix.components.attack.defense_evasion.file_deletion.deletefile.deletefile:AttackWindowsDeleteFileFileDeletionComponent [windows]",
             "windows-bitblt-screen-capture = helix.components.attack.collection.screen_capture.bitblt.bitblt:AttackWindowsBitBltScreenCaptureComponent [windows]",
             "windows-regqueryvalue-query-registry = helix.components.attack.discovery.query_registry.regqueryvalue.regqueryvalue:AttackWindowsRegQueryValueQueryRegistryComponent [windows]",
+            "windows-system-shutdown = helix.components.attack.impact.sys_shutdown.turnoff.turnoff:AttackWindowsSystemShutdownComponent [windows]",
             "linux-unlink-file-deletion = helix.components.attack.defense_evasion.file_deletion.unlink.unlink:AttackLinuxUnlinkFileDeletionComponent [linux]",
             "linux-remove-file-deletion = helix.components.attack.defense_evasion.file_deletion.remove.remove:AttackLinuxRemoveFileDeletionComponent [linux]",
             "linux-utime-timestomp = helix.components.attack.defense_evasion.timestomp.utime.utime:AttackLinuxUtimeTimestompComponent [linux]",
@@ -87,7 +88,7 @@ setup(
             "linux-zlib-decompress-data-compressed = helix.components.attack.exfiltration.data_compressed.zlib.zlib:AttackLinuxZLibDecompressDataCompressedComponent [linux]",
             "linux-openssl-aes-encrypt-data-encrypted = helix.components.attack.exfiltration.data_encrypted.openssl.aes.aes:AttackLinuxOpenSSLAESEncryptDataEncryptedComponent [linux]",
             "linux-openssl-aes-decrypt-data-encrypted = helix.components.attack.exfiltration.data_encrypted.openssl.aes.aes:AttackLinuxOpenSSLAESDecryptDataEncryptedComponent [linux]",
-            "linux-system-shutdown = helix.components.attack.impact.sys_shutdown.shutdown.shutdown:AttackLinuxSystemShutdownComponent [linux]"
+            "linux-system-shutdown = helix.components.attack.impact.sys_shutdown.shutdown.shutdown:AttackLinuxSystemShutdownComponent [linux]",
         ],
         "helix.components.loaders": [],
         "helix.transforms": [
