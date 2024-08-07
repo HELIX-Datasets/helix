@@ -1,7 +1,0 @@
-/usr/bin/ld: /tmp/tmp82h3oqjt(cpSpaceStep.c.o): in function `chipmunk_cpSpaceStep':
-cpSpaceStep.c:(.text+0x9e6): undefined reference to `__pow_finite'
-/usr/bin/ld: cpSpaceStep.c:(.text+0xa97): undefined reference to `__pow_finite'
-collect2: error: ld returned 1 exit status
-make[2]: *** [CMakeFiles/d5419ec5ac1f4e51bc4f80c9cc40f2ac.dir/build.make:88: d5419ec5ac1f4e51bc4f80c9cc40f2ac] Error 1
-make[1]: *** [CMakeFiles/Makefile2:76: CMakeFiles/d5419ec5ac1f4e51bc4f80c9cc40f2ac.dir/all] Error 2
-make: *** [Makefile:84: all] Error 2
