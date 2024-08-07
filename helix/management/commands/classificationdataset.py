@@ -54,7 +54,7 @@ def generate_centroids(n_class, class_distance):
 
 def classification_tags(class_coordinates, n_components, components_list):
     """Randomly selects n components for the classes. These components
-        act as the tags for the class.
+    act as the tags for the class.
     """
 
     class_components = []
@@ -123,7 +123,7 @@ def component_selection(
 def class_sample_paring(results_c):
     """Provides the samples with their respective components.
 
-        Each class will contain all the components per sample. 
+    Each class will contain all the components per sample.
     """
 
     options = []
@@ -426,7 +426,7 @@ class Command(mutils.CommandBase):
         class_coordinates = generate_centroids(num_centroids, class_distance)
         classification_classes = classification_tags(
             class_coordinates, num_components, components_list
-        )      
+        )
         results_c = component_selection(
             classification_classes, sample_num, num_components, components_list
         )
@@ -435,10 +435,9 @@ class Command(mutils.CommandBase):
         i = 1
         for clss in classification_classes:
             for centorid, list_comps in iter(clss.items()):
-                class_name  = "class_" + str(i)
+                class_name = "class_" + str(i)
                 function_names[class_name] = list(list_comps.pop())
                 i += 1
-
 
         blueprints = set.intersection(
             *[set(c.blueprints) for c in bhlxClasses_dict.values()]
