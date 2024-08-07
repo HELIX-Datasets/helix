@@ -1,7 +1,9 @@
 from .... import utils
 
+
 class AttackLinuxCreateHiddenDirComponent(utils.SimpleTemplatedComponent):
     """Create Hidden Dir in Linux."""
+
     name = "linux-create-hidden-dir"
     verbose_name = "Linux Create Hidden Directory"
     description = "Linux Create Hidden Directory"
@@ -16,7 +18,7 @@ class AttackLinuxCreateHiddenDirComponent(utils.SimpleTemplatedComponent):
         ("name", "linux-create-dir"),
     )
 
-    options = {"path":{}}
+    options = {"path": {}}
 
     source = "linux-create-dir.cpp"
     function = "new_dir"

@@ -4,10 +4,11 @@
 #include <sys/types.h>
 using namespace std;
 
-int ${new_dir}(int argv, char* argc[]){
-     // Creating a directory
+int ${new_dir}(int argv, char *argc[])
+{
+    // Creating a directory
     if (mkdir(${path}, 0777) == -1)
         cerr << "Error :  " << strerror(errno) << endl;
-        
+
     return 0;
 }
