@@ -3,7 +3,7 @@ from ...... import component
 
 
 class AttackLinuxSystemShutdownComponent(component.Component):
-    """Shutdown linux system"""
+    """Shutdown Linux System."""
 
     name = "linux-system-shutdown"
     verbose_name = "Linux System Shutdown"
