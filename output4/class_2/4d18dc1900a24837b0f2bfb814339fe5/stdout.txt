@@ -1,0 +1,21 @@
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/gl33203/helix/output4/class_2/4d18dc1900a24837b0f2bfb814339fe5/build
+Scanning dependencies of target 4d18dc1900a24837b0f2bfb814339fe5
+[ 50%] Building CXX object CMakeFiles/4d18dc1900a24837b0f2bfb814339fe5.dir/main.cpp.o
+[100%] Linking CXX executable 4d18dc1900a24837b0f2bfb814339fe5
+[100%] Built target 4d18dc1900a24837b0f2bfb814339fe5

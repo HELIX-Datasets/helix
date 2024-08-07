@@ -33,8 +33,8 @@ def load_components(bhlx_dir):
     return components_dict
 
 
-def generate_class(n_class, class_distance):
-    """Generation of the coordinates of centoids for the classification classes randomly.
+def generate_centroids(n_class, class_distance):
+    """Generation of the coordinates of centroids for the classification classes randomly.
 
     Note: Centroids are equidistant points on the graph and they are the
         reference point for the classification class.
@@ -53,10 +53,8 @@ def generate_class(n_class, class_distance):
 
 
 def classification_tags(class_coordinates, n_components, components_list):
-    """Selection of the components for each of the classes.
-
-    Randonmly selects n components for the classes. These components
-    act as the tags for the class.
+    """Randomly selects n components for the classes. These components
+        act as the tags for the class.
     """
 
     class_components = []
@@ -75,7 +73,7 @@ def classification_tags(class_coordinates, n_components, components_list):
     return class_components
 
 
-def sample_components(
+def component_selection(
     classification_classes, sample_num, num_components, components_list
 ):
     """Selection of the components for each of the samples per class.
@@ -122,8 +120,11 @@ def sample_components(
     return comp_dict
 
 
-def sampling(results_c):
-    """Provides the samples with their respective components."""
+def class_sample_paring(results_c):
+    """Provides the samples with their respective components.
+
+        Each class will contain all the components per sample. 
+    """
 
     options = []
     sample_components = {}
@@ -140,7 +141,7 @@ def sampling(results_c):
             class_name = "class_" + str(i)
             sample_components.update({class_name: component_names})
             i += 1
-    return options, sample_components
+    return sample_components
 
 
 def sample_distance(results_c):
@@ -220,7 +221,7 @@ def classfication_graph(sample_distance, classes, sample_num, num_components, ou
     return graph_path
 
 
-def process(blueprint, bhlxClasses_dict, class_name, sample, working):
+def process(blueprint, function_names, bhlxClasses_dict, class_name, sample, working):
     identifier = uuid.uuid4()
 
     class_dir = os.path.join(working, class_name)
@@ -287,7 +288,11 @@ def process(blueprint, bhlxClasses_dict, class_name, sample, working):
 
     # Selects only the functions used in the sample as tags
     bhlx_functions = []
-    bhlx_functions.append(class_name)
+    class_functions = []
+    class_functions.append(class_name)
+    for name in function_names.get(class_name):
+        class_functions.append(name)
+    bhlx_functions.append(class_functions)
     for tag in tags:
         for c in sample:
             if tag[1] == c:
@@ -418,13 +423,22 @@ class Command(mutils.CommandBase):
 
         bhlxClasses_dict = load_components(bhlx_dir)
         components_list = list(bhlxClasses_dict.keys())
-        class_coordinates = generate_class(num_centroids, class_distance)
+        class_coordinates = generate_centroids(num_centroids, class_distance)
         classification_classes = classification_tags(
             class_coordinates, num_components, components_list
-        )
-        results_c = sample_components(
+        )      
+        results_c = component_selection(
             classification_classes, sample_num, num_components, components_list
         )
+
+        function_names = dict()
+        i = 1
+        for clss in classification_classes:
+            for centorid, list_comps in iter(clss.items()):
+                class_name  = "class_" + str(i)
+                function_names[class_name] = list(list_comps.pop())
+                i += 1
+
 
         blueprints = set.intersection(
             *[set(c.blueprints) for c in bhlxClasses_dict.values()]
@@ -446,7 +460,7 @@ class Command(mutils.CommandBase):
         blueprint = blueprints.pop()
 
         try:
-            graph_samples, samples = sampling(results_c)
+            samples = class_sample_paring(results_c)
 
         except SamplingError as e:
             mutils.print(e, color=mutils.Color.red)
@@ -465,6 +479,7 @@ class Command(mutils.CommandBase):
         arguments = [
             (
                 blueprint,
+                function_names,
                 bhlxClasses_dict,
                 class_name,
                 component_list,
