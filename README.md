@@ -99,6 +99,21 @@ helix dataset-similarity random dataset \
     -t strip
 ```
 
+Helix includes some classification dataset generation tools using Blind Helix Components. To generate a classification 
+dataset of 2 classes and 25 samples consisting of 10 Components, run:
+
+```bash
+helix classification-dataset dataset \
+    -dir /path/to/bhlx-component-library \
+    --class-number 2 \
+    --distance 4 \
+    --sample-count 25 \
+    --component-count 10  \
+```
+**Note:** Using Blind Helix Components may result in make invocation failures when generating the datasets.
+          Each generated dataset will include a json file with all the tags and a graph for visualization. 
+
+
 There's a lot more to HELIX including a scripting interface (see the
 `examples/` directory) and tutorials for new users. For more, check out the
 [full documentation](https://helix-datasets.readthedocs.io/). 
